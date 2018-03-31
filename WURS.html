@@ -1,0 +1,666 @@
+<html>
+<head>
+<title>Wender Utah Rating Scale for the Attention Deficit Hyperactivity Disorder</title>
+<style>
+table {
+    border-collapse: collapse;
+    }
+table, th, td {
+    border: 1px solid black;
+    padding: 4px;
+    }
+tr:hover {
+    background-color: #5FFFF5;
+    }
+th,td.q {
+    width: 60px;
+    }
+/*tr:nth-child(even) {
+    background-color: #F5F38F;
+    }*/
+</style>
+<script type="text/javascript">
+    /* check radiobutton if containing cell is clicked */
+    function c(o)
+        {
+        var el, i = 0;
+        while (el = o.childNodes[i++])
+            if ('radio' == el.type)
+                el.checked = true;
+        }
+
+    /* indexes of the 25 questions which are added to the score */
+    let ahdh_qs = [ 3, 4, 5, 6, 7, 9, 10, 11, 12, 15, 16, 17, 20, 21, 24, 25, 26, 27, 28, 29, 40, 41, 51, 56, 59 ] ;
+    /* list of possible values */
+    let vals = [ 0, 1, 2, 3, 4 ] ;
+    function doScore()
+        {
+        var score=0, answercount=0, q, v;
+        for (let q of ahdh_qs)
+            {
+            for(let v of vals)
+                {
+                var id = "Q"+q+"."+v;
+                var radio = document.getElementById(id);
+                //console.log("id="+id+", radio="+radio);
+                if((null != radio) && (true == radio.checked))
+                    {
+                    score += v;
+                    answercount++;
+                    //console.log(" . -> checked");
+                    }
+                }
+            }
+        console.log("answercount="+answercount+", score="+score);
+        document.getElementById("score").value = score;
+        if(answercount < ahdh_qs.length)
+            alert("not all questions were answered - saw only "+answercount+" of "+ahdh_qs.length+" needed")
+        }
+</script>
+</head>
+<body>
+<h2>Wender Utah Rating Scale for the Attention Deficit Hyperactivity Disorder</h2>
+
+<h3>Overview:</h3>
+    The Wender Utah Rating Scale can be used to assess adults for Attention Deficit<br>
+    Hyperactivity Disorder with a subset of 25 questions associated with that diagnosis<br>
+
+<h3>Wender Utah Rating Scale</h3>
+    61 questions answered by the adult patient recalling his or her childhood behavior<br>
+    5 possible responses scored from 0 to 4 points<br>
+
+<br>
+<br>
+
+<table>
+    <tr>
+        <th colspan="2">As a child I was or had:</th>
+        <th class="q">not at all or very slightly</th>
+        <th class="q">mildly</th>
+        <th class="q">moder&shy;ately</th>
+        <th class="q">quite a bit</th>
+        <th class="q">very much</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>active restless always on the go</td>
+        <td onClick="c(this);" class="q"><input id="Q1.0" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q1.1" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q1.2" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q1.3" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q1.4" name="Q1" type="radio"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>afraid of things</td>
+        <td onClick="c(this);" class="q"><input id="Q2.0" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q2.1" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q2.2" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q2.3" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q2.4" name="Q2" type="radio"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>concentration problems, easily distracted</td>
+        <td onClick="c(this);" class="q"><input id="Q3.0" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q3.1" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q3.2" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q3.3" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q3.4" name="Q3" type="radio"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>anxious worrying</td>
+        <td onClick="c(this);" class="q"><input id="Q4.0" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.1" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.2" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.3" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.4" name="Q4" type="radio"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>nervous fidgety</td>
+        <td onClick="c(this);" class="q"><input id="Q5.0" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.1" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.2" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.3" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.4" name="Q5" type="radio"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>inattentive daydreaming</td>
+        <td onClick="c(this);" class="q"><input id="Q6.0" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.1" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.2" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.3" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.4" name="Q6" type="radio"></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>hot- or short-tempered low boiling point</td>
+        <td onClick="c(this);" class="q"><input id="Q7.0" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.1" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.2" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.3" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.4" name="Q7" type="radio"></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>shy sensitive</td>
+        <td onClick="c(this);" class="q"><input id="Q8.0" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.1" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.2" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.3" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.4" name="Q8" type="radio"></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>temper outbursts tantrums</td>
+        <td onClick="c(this);" class="q"><input id="Q9.0" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.1" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.2" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.3" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.4" name="Q9" type="radio"></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>trouble with stick-to-it-tiveness not following through. failing to finish things started</td>
+        <td onClick="c(this);" class="q"><input id="Q10.0" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.1" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.2" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.3" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.4" name="Q10" type="radio"></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>stubborn strong-willed</td>
+        <td onClick="c(this);" class="q"><input id="Q11.0" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.1" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.2" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.3" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.4" name="Q11" type="radio"></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>sad or blue depressed unhappy</td>
+        <td onClick="c(this);" class="q"><input id="Q12.0" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.1" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.2" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.3" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.4" name="Q12" type="radio"></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>incautious. dare-devilish involved in pranks</td>
+        <td onClick="c(this);" class="q"><input id="Q13.0" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.1" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.2" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.3" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.4" name="Q13" type="radio"></td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>not getting a kick out of things dissatisfied with life</td>
+        <td onClick="c(this);" class="q"><input id="Q14.0" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.1" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.2" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.3" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.4" name="Q14" type="radio"></td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>disobedient with parents rebellious sassy</td>
+        <td onClick="c(this);" class="q"><input id="Q15.0" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.1" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.2" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.3" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.4" name="Q15" type="radio"></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>low opinion of myself</td>
+        <td onClick="c(this);" class="q"><input id="Q16.0" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.1" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.2" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.3" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.4" name="Q16" type="radio"></td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>irritable</td>
+        <td onClick="c(this);" class="q"><input id="Q17.0" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.1" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.2" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.3" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.4" name="Q17" type="radio"></td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>outgoing friendly enjoyed company of people</td>
+        <td onClick="c(this);" class="q"><input id="Q18.0" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.1" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.2" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.3" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.4" name="Q18" type="radio"></td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>sloppy disorganized</td>
+        <td onClick="c(this);" class="q"><input id="Q19.0" name="Q19" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q19.1" name="Q19" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q19.2" name="Q19" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q19.3" name="Q19" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q19.4" name="Q19" type="radio"></td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>moody ups and downs</td>
+        <td onClick="c(this);" class="q"><input id="Q20.0" name="Q20" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q20.1" name="Q20" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q20.2" name="Q20" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q20.3" name="Q20" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q20.4" name="Q20" type="radio"></td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>angry</td>
+        <td onClick="c(this);" class="q"><input id="Q21.0" name="Q21" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q21.1" name="Q21" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q21.2" name="Q21" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q21.3" name="Q21" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q21.4" name="Q21" type="radio"></td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>friends popular</td>
+        <td onClick="c(this);" class="q"><input id="Q22.0" name="Q22" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q22.1" name="Q22" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q22.2" name="Q22" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q22.3" name="Q22" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q22.4" name="Q22" type="radio"></td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>well-organized tidy neat</td>
+        <td onClick="c(this);" class="q"><input id="Q23.0" name="Q23" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q23.1" name="Q23" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q23.2" name="Q23" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q23.3" name="Q23" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q23.4" name="Q23" type="radio"></td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>acting without thinking, impulsive</td>
+        <td onClick="c(this);" class="q"><input id="Q24.0" name="Q24" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q24.1" name="Q24" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q24.2" name="Q24" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q24.3" name="Q24" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q24.4" name="Q24" type="radio"></td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>tendency to be immature</td>
+        <td onClick="c(this);" class="q"><input id="Q25.0" name="Q25" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q25.1" name="Q25" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q25.2" name="Q25" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q25.3" name="Q25" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q25.4" name="Q25" type="radio"></td>
+    </tr>
+    <tr>
+        <td>26</td>
+        <td>guilty feelings regretful</td>
+        <td onClick="c(this);" class="q"><input id="Q26.0" name="Q26" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q26.1" name="Q26" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q26.2" name="Q26" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q26.3" name="Q26" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q26.4" name="Q26" type="radio"></td>
+    </tr>
+    <tr>
+        <td>27</td>
+        <td>losing control of myself</td>
+        <td onClick="c(this);" class="q"><input id="Q27.0" name="Q27" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q27.1" name="Q27" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q27.2" name="Q27" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q27.3" name="Q27" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q27.4" name="Q27" type="radio"></td>
+    </tr>
+    <tr>
+        <td>28</td>
+        <td>tendency to be or act irrational</td>
+        <td onClick="c(this);" class="q"><input id="Q28.0" name="Q28" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q28.1" name="Q28" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q28.2" name="Q28" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q28.3" name="Q28" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q28.4" name="Q28" type="radio"></td>
+    </tr>
+    <tr>
+        <td>29</td>
+        <td>unpopular with other children, didn't keep friends for long, didn't get along with other children</td>
+        <td onClick="c(this);" class="q"><input id="Q29.0" name="Q29" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q29.1" name="Q29" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q29.2" name="Q29" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q29.3" name="Q29" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q29.4" name="Q29" type="radio"></td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>poorly coordinated, did not participate in sports</td>
+        <td onClick="c(this);" class="q"><input id="Q30.0" name="Q30" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q30.1" name="Q30" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q30.2" name="Q30" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q30.3" name="Q30" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q30.4" name="Q30" type="radio"></td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>afraid of losing control of self</td>
+        <td onClick="c(this);" class="q"><input id="Q31.0" name="Q31" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q31.1" name="Q31" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q31.2" name="Q31" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q31.3" name="Q31" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q31.4" name="Q31" type="radio"></td>
+    </tr>
+    <tr>
+        <td>32</td>
+        <td>well-coordinated picked first in games</td>
+        <td onClick="c(this);" class="q"><input id="Q32.0" name="Q32" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q32.1" name="Q32" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q32.2" name="Q32" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q32.3" name="Q32" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q32.4" name="Q32" type="radio"></td>
+    </tr>
+    <tr>
+        <td>33</td>
+        <td>tomboyish (for women only)</td>
+        <td onClick="c(this);" class="q"><input id="Q33.0" name="Q33" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q33.1" name="Q33" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q33.2" name="Q33" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q33.3" name="Q33" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q33.4" name="Q33" type="radio"></td>
+    </tr>
+    <tr>
+        <td>34</td>
+        <td>running away from home</td>
+        <td onClick="c(this);" class="q"><input id="Q34.0" name="Q34" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q34.1" name="Q34" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q34.2" name="Q34" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q34.3" name="Q34" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q34.4" name="Q34" type="radio"></td>
+    </tr>
+    <tr>
+        <td>35</td>
+        <td>getting into fights</td>
+        <td onClick="c(this);" class="q"><input id="Q35.0" name="Q35" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q35.1" name="Q35" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q35.2" name="Q35" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q35.3" name="Q35" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q35.4" name="Q35" type="radio"></td>
+    </tr>
+    <tr>
+        <td>36</td>
+        <td>teasing other children</td>
+        <td onClick="c(this);" class="q"><input id="Q36.0" name="Q36" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q36.1" name="Q36" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q36.2" name="Q36" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q36.3" name="Q36" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q36.4" name="Q36" type="radio"></td>
+    </tr>
+    <tr>
+        <td>37</td>
+        <td>leader bossy</td>
+        <td onClick="c(this);" class="q"><input id="Q37.0" name="Q37" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q37.1" name="Q37" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q37.2" name="Q37" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q37.3" name="Q37" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q37.4" name="Q37" type="radio"></td>
+    </tr>
+    <tr>
+        <td>38</td>
+        <td>difficulty getting awake</td>
+        <td onClick="c(this);" class="q"><input id="Q38.0" name="Q38" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q38.1" name="Q38" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q38.2" name="Q38" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q38.3" name="Q38" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q38.4" name="Q38" type="radio"></td>
+    </tr>
+    <tr>
+        <td>39</td>
+        <td>follower led around too much</td>
+        <td onClick="c(this);" class="q"><input id="Q39.0" name="Q39" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q39.1" name="Q39" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q39.2" name="Q39" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q39.3" name="Q39" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q39.4" name="Q39" type="radio"></td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>trouble seeing things from someone else's point of view</td>
+        <td onClick="c(this);" class="q"><input id="Q40.0" name="Q40" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q40.1" name="Q40" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q40.2" name="Q40" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q40.3" name="Q40" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q40.4" name="Q40" type="radio"></td>
+    </tr>
+    <tr>
+        <td>41</td>
+        <td>trouble with authorities, trouble with school visits to principal's office</td>
+        <td onClick="c(this);" class="q"><input id="Q41.0" name="Q41" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q41.1" name="Q41" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q41.2" name="Q41" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q41.3" name="Q41" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q41.4" name="Q41" type="radio"></td>
+    </tr>
+    <tr>
+        <td>42</td>
+        <td>trouble with police, booked, convicted</td>
+        <td onClick="c(this);" class="q"><input id="Q42.0" name="Q42" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q42.1" name="Q42" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q42.2" name="Q42" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q42.3" name="Q42" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q42.4" name="Q42" type="radio"></td>
+    </tr>
+
+    <tr>
+        <th colspan="2">Medical problems as a child:</th>
+        <th class="q">not at all or very slightly</th>
+        <th class="q">mildly</th>
+        <th class="q">moder&shy;ately</th>
+        <th class="q">quite a bit</th>
+        <th class="q">very much</th>
+    </tr>
+    <tr>
+        <td>43</td>
+        <td>headaches</td>
+        <td onClick="c(this);" class="q"><input id="Q43.0" name="Q43" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q43.1" name="Q43" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q43.2" name="Q43" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q43.3" name="Q43" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q43.4" name="Q43" type="radio"></td>
+    </tr>
+    <tr>
+        <td>44</td>
+        <td>stomachaches</td>
+        <td onClick="c(this);" class="q"><input id="Q44.0" name="Q44" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q44.1" name="Q44" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q44.2" name="Q44" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q44.3" name="Q44" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q44.4" name="Q44" type="radio"></td>
+    </tr>
+    <tr>
+        <td>45</td>
+        <td>constipation</td>
+        <td onClick="c(this);" class="q"><input id="Q45.0" name="Q45" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q45.1" name="Q45" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q45.2" name="Q45" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q45.3" name="Q45" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q45.4" name="Q45" type="radio"></td>
+    </tr>
+    <tr>
+        <td>46</td>
+        <td>diarrhea</td>
+        <td onClick="c(this);" class="q"><input id="Q46.0" name="Q46" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q46.1" name="Q46" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q46.2" name="Q46" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q46.3" name="Q46" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q46.4" name="Q46" type="radio"></td>
+    </tr>
+    <tr>
+        <td>47</td>
+        <td>food allergies</td>
+        <td onClick="c(this);" class="q"><input id="Q47.0" name="Q47" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q47.1" name="Q47" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q47.2" name="Q47" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q47.3" name="Q47" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q47.4" name="Q47" type="radio"></td>
+    </tr>
+    <tr>
+        <td>48</td>
+        <td>other allergies</td>
+        <td onClick="c(this);" class="q"><input id="Q48.0" name="Q48" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q48.1" name="Q48" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q48.2" name="Q48" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q48.3" name="Q48" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q48.4" name="Q48" type="radio"></td>
+    </tr>
+    <tr>
+        <td>49</td>
+        <td>bedwetting</td>
+        <td onClick="c(this);" class="q"><input id="Q49.0" name="Q49" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q49.1" name="Q49" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q49.2" name="Q49" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q49.3" name="Q49" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q49.4" name="Q49" type="radio"></td>
+    </tr>
+
+    <tr>
+        <th colspan="2">As a child in school I was (or had):</th>
+        <th class="q">not at all or very slightly</th>
+        <th class="q">mildly</th>
+        <th class="q">moder&shy;ately</th>
+        <th class="q">quite a bit</th>
+        <th class="q">very much</th>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>overall a good student fast</td>
+        <td onClick="c(this);" class="q"><input id="Q50.0" name="Q50" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q50.1" name="Q50" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q50.2" name="Q50" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q50.3" name="Q50" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q50.4" name="Q50" type="radio"></td>
+    </tr>
+    <tr>
+        <td>51</td>
+        <td>overall a poor student slow learner</td>
+        <td onClick="c(this);" class="q"><input id="Q51.0" name="Q51" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q51.1" name="Q51" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q51.2" name="Q51" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q51.3" name="Q51" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q51.4" name="Q51" type="radio"></td>
+    </tr>
+    <tr>
+        <td>52</td>
+        <td>slow in learning to read</td>
+        <td onClick="c(this);" class="q"><input id="Q52.0" name="Q52" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q52.1" name="Q52" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q52.2" name="Q52" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q52.3" name="Q52" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q52.4" name="Q52" type="radio"></td>
+    </tr>
+    <tr>
+        <td>53</td>
+        <td>slow reader</td>
+        <td onClick="c(this);" class="q"><input id="Q53.0" name="Q53" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q53.1" name="Q53" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q53.2" name="Q53" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q53.3" name="Q53" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q53.4" name="Q53" type="radio"></td>
+    </tr>
+    <tr>
+        <td>54</td>
+        <td>trouble reversing letters</td>
+        <td onClick="c(this);" class="q"><input id="Q54.0" name="Q54" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q54.1" name="Q54" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q54.2" name="Q54" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q54.3" name="Q54" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q54.4" name="Q54" type="radio"></td>
+    </tr>
+    <tr>
+        <td>55</td>
+        <td>problems with spelling</td>
+        <td onClick="c(this);" class="q"><input id="Q55.0" name="Q55" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q55.1" name="Q55" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q55.2" name="Q55" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q55.3" name="Q55" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q55.4" name="Q55" type="radio"></td>
+    </tr>
+    <tr>
+        <td>56</td>
+        <td>trouble with mathematics or numbers</td>
+        <td onClick="c(this);" class="q"><input id="Q56.0" name="Q56" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q56.1" name="Q56" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q56.2" name="Q56" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q56.3" name="Q56" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q56.4" name="Q56" type="radio"></td>
+    </tr>
+    <tr>
+        <td>57</td>
+        <td>bad handwriting</td>
+        <td onClick="c(this);" class="q"><input id="Q57.0" name="Q57" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q57.1" name="Q57" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q57.2" name="Q57" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q57.3" name="Q57" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q57.4" name="Q57" type="radio"></td>
+    </tr>
+    <tr>
+        <td>58</td>
+        <td>able to read pretty well but never really enjoyed reading</td>
+        <td onClick="c(this);" class="q"><input id="Q58.0" name="Q58" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q58.1" name="Q58" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q58.2" name="Q58" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q58.3" name="Q58" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q58.4" name="Q58" type="radio"></td>
+    </tr>
+    <tr>
+        <td>59</td>
+        <td>not achieving up to potential</td>
+        <td onClick="c(this);" class="q"><input id="Q59.0" name="Q59" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q59.1" name="Q59" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q59.2" name="Q59" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q59.3" name="Q59" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q59.4" name="Q59" type="radio"></td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>repeating grades</td>
+        <td onClick="c(this);" class="q"><input id="Q60.0" name="Q60" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q60.1" name="Q60" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q60.2" name="Q60" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q60.3" name="Q60" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q60.4" name="Q60" type="radio"></td>
+    </tr>
+    <tr>
+        <td>61</td>
+        <td>suspended or expelled</td>
+        <td onClick="c(this);" class="q"><input id="Q61.0" name="Q61" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q61.1" name="Q61" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q61.2" name="Q61" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q61.3" name="Q61" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q61.4" name="Q61" type="radio"></td>
+    </tr>
+</table>
+
+<h4>Score</h4>
+
+Wender Utah rating scale subscore = <input type="button" value="Score .." onClick="javascript:doScore();"> <input id="score" name="score" type="text" value="" size="5"/> (sum of 25 questions associated with ADHD)
+
+<h4>Interpretation:</h4>
+    minimum score for the 25 questions is 0<br>
+    maximum score 100<br>
+    if a cutoff score of 46 was used 86 of patients with ADHD 99 of normal persons and 81% of depressed subjects were correctly classified<br>
+
+<h4>References:</h4>
+    Ward MF Wender PH Reimherr FW.
+    <a href="https://doi.org/10.1176/ajp.150.6.885">The Wender Utah Rating Scale: An aid in the retrospective diagnosis of childhood Attention Deficit Hyperactivity Disorder. Am J Psychiatry. 1993; 150: 885-890.</a>
+<br>
+<br><br>
